@@ -1,5 +1,7 @@
 FROM python:{{ cookiecutter.python_version }}-slim
 
+WORKDIR {{ cookiecutter.docker_workdir }}
+
 RUN apt-get update
 RUN apt install curl -y
 
