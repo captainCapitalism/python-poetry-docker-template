@@ -5,5 +5,8 @@
   "main_service_name": "backend",
 
   "compose_version": 3.8,
-  "compose_tty": ["true", "false"]
+  "compose_tty": ["true", "false"],
+
+  "python_version": "3.10",
+  "python_poetry_version": "1.1.13"
 }
