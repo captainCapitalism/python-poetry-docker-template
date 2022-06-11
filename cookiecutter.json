@@ -1,0 +1,9 @@
+{
+  "project_name": "Python project",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+  "main_directory": "app",
+  "main_service_name": "backend",
+
+  "compose_version": 3.8,
+  "compose_tty": ["true", "false"]
+}

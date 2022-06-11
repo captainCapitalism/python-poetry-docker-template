@@ -1,0 +1,15 @@
+version: "{{ cookiecutter.compose_version }}"
+
+services:
+  {{ cookiecutter.main_service_name }}:
+    build:
+      context: {{ cookiecutter.main_directory }}
+      dockerfile: Dockerfile
+
+    # tty option allows containers to live with just `python` as a running command,
+    # also works with `bash`, `sh` and most likely many more
+    # this setting allows to exec into container and add additional dependencies via poetry
+    # without more workarounds
+    # once the app is stable and can run without `tty` on its own (ex. flask app) you can remove
+    # the option all together
+    tty: {{ cookiecutter.compose_tty }}
