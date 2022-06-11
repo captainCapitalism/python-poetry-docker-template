@@ -2,7 +2,7 @@ import subprocess
 
 
 def run():
-    delete_directory = ["sudo", "rm", "-r", "python-project"]
+    delete_directory = ["rm", "-r", "python-project"]
     run_cookiecutter = ["cookiecutter", ".", "--no-input"]
     subprocess.run(
         delete_directory
