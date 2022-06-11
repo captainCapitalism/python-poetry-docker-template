@@ -6,9 +6,21 @@ services:
     # also works with `bash`, `sh` and most likely many more
     # this setting allows to exec into container and add additional dependencies via poetry
     # without more workarounds
-    # once the app is stable and can run without `tty` on its own (ex. flask app) you can remove
-    # the option all together
+    # once the app is stable and can run without `tty` (ex. flask app) you can remove the option
     tty: {{ cookiecutter.compose_tty }}
+
+    volumes:
+      - ./{{ cookiecutter.main_directory }}:/{{ cookiecutter.docker_workdir }}
+
+  black:
+    # Uncompromising code formatter
+    # To integrate with IDE check: https://black.readthedocs.io/en/stable/integrations/editors.html
+    build:
+      context: {{ cookiecutter.main_directory }}
+      dockerfile: dev/Dockerfile.black
+
+    ports:
+      - "45484:45484"
 
     volumes:
       - ./{{ cookiecutter.main_directory }}:/{{ cookiecutter.docker_workdir }}
